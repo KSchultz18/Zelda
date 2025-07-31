@@ -1,0 +1,118 @@
+/* Note: I had chatGPT help with this css file */
+
+@font-face {
+	font-family: 'HylianSymbols';
+	src: url('../sources/fonts/hylian-symbols/HylianSymbols.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'BreathOfTheWild';
+	src: url('../sources/fonts/the-wild-breath-of-zelda/The Wild Breath of Zelda.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Triforce';
+	src: url('../sources/fonts/triforce-font/Triforce.ttf') format('truetype');
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background-color: black;
+	color: white;
+	font-family: sans-serif;
+}
+
+.title-box {
+	display: grid;
+	grid-template-columns: 1fr auto auto 1fr;
+	grid-template-rows: auto;
+	align-items: center;
+	gap: 0.5em 1em;
+	padding: 2em 2em;
+	width: 100%;
+	background: linear-gradient(
+		to bottom,
+		rgba(137, 225, 231, 0.8) 0%,
+		rgba(137, 225, 231, 0.6) 30%,
+		rgba(0, 0, 0, 0.3) 70%,
+		rgba(0, 0, 0, 0.0) 100%
+	);
+	position: relative;
+	z-index: 10;
+}
+
+.triforce-box {
+	grid-column: 2;
+	margin-top: -0.25em;
+	font-family: 'Triforce', sans-serif;
+	font-size: 7rem;
+	color: white;
+	text-shadow: 0 0 10px rgba(137, 225, 231, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header-text {
+	margin-top: -1.25em;
+	grid-column: 3;
+	display: flex;
+	flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+    align-self: start;    
+}
+
+.header-text h1 {
+	font-family: 'Triforce', sans-serif;
+	font-size: 3.5rem;
+	margin: 0;
+	color: white;
+}
+
+.header-text h2 {
+	margin-top: -1.25em;
+	font-family: 'BreathOfTheWild', sans-serif;
+	font-size: 2rem;
+	margin: 0;
+	font-weight: normal;
+	color: white;
+	align-self: center; 
+}
+
+#map {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+#svgmap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24000px;
+  height: 20000px;
+  pointer-events: none;
+  transform-origin: 0 0;
+}
+
+#tile-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24000px;
+  height: 20000px;
+  transform-origin: 0 0;
+}
+
+
+#svgmap image.marker {
+  filter:
+    drop-shadow(15px 15px 30px rgba(0,0,0,0.5))
+    drop-shadow(0 0 50px rgba(0,0,0,0.3));
+}
