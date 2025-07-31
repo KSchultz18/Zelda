@@ -13,6 +13,7 @@ window.onload = async () => {
     const svg = d3.select("#svgmap");
     const types = ["Shrine", "Sheikah Tower", "Stable", "Village"];
     const grouped = await load_markers(types, "./sources/json_files/pins.json");
+    
     render_markers(grouped, svg);
     // render_region_labels(svg)
     set_filters(types);
