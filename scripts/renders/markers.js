@@ -60,6 +60,7 @@ function update_markers() {
         }
     })
     .on("mouseover", function(event, d) {
+        if (!visible_types.has(d.marker_type)) return;
         //console.log(`iD = ${d.id}`);
         tooltip
             .style("opacity", 1).text(d.id)
