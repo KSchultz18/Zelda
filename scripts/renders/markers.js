@@ -1,5 +1,5 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
-
+import {tooltip} from "../interactions/hover.js";
 
 let current_zoom = 1;
 let visible_types = new Set();
@@ -58,5 +58,15 @@ function update_markers() {
         } else {
             return "hidden";
         }
-    });
+    })
+    .on("mouseover", function(event, d) {
+        //console.log(`iD = ${d.id}`);
+        tooltip
+            .style("opacity", 1).text(d.id)
+            .style("left", (event.pageX + 10) + "px")
+            .style("top", (event.pageY + 10) + "px");
+    })
+    .on("mouseout", function(event, d) {
+        tooltip.style("opacity", 0);
+    })
 }
