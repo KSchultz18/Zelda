@@ -1,0 +1,131 @@
+/* Note: I had chatGPT help with this css file */
+
+@font-face {
+  font-family: 'HylianSymbols';
+  src: url('../sources/fonts/hylian-symbols/HylianSymbols.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'BreathOfTheWild';
+  src: url('../sources/fonts/the-wild-breath-of-zelda/The Wild Breath of Zelda.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Triforce';
+  src: url('../sources/fonts/triforce-font/Triforce.ttf') format('truetype');
+}
+
+#filter-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+    font-family: inherit;
+}
+
+#filter-toggle {
+    background-color: rgba(255, 255, 255, 0.85); 
+    border: 1px solid rgba(50, 50, 50, 0.4);  
+    color: rgba(0, 0, 0, 0.7);                   
+    padding: 0em 1.75em;
+    font-size: 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Triforce', sans-serif;
+    text-shadow:   
+    0 0 2px rgba(255, 215, 0, 0.4),
+    0 0 4px rgba(255, 215, 0, 0.3);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#filter-toggle .rupies {
+    font-size: 1.5em; 
+    vertical-align: middle;
+}
+
+
+#filter-toggle:hover {
+    background-color: rgba(255, 255, 255, 1);  
+    color: rgba(0, 0, 0, 0.85); 
+    text-shadow:
+    0 0 4px rgba(255, 215, 100, 0.6),
+    0 0 8px rgba(255, 215, 100, 0.4);
+}
+
+#filter-panel {
+    margin-top: 0.5em;
+    padding: 1em 1.5em;
+    border-radius: 6px;
+    display: none;
+    font-size: 1.4rem;
+    font-family: 'BreathOfTheWild', sans-serif;
+    color: white;
+
+    background: linear-gradient(
+    to bottom,
+    rgba(137, 225, 231, 0.5) 0%,
+    rgba(30, 30, 30, 0.85) 40%,
+    rgba(0, 0, 0, 0.95) 100%
+    );
+
+    border: 1px solid rgba(137, 225, 231, 0.4);
+    box-shadow: 0 0 10px rgba(137, 225, 231, 0.3);
+}
+
+#filter-panel.show {
+    display: block;
+    }
+
+
+#filter-panel label {
+    display: block;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+
+
+
+#filter-panel input[type="checkbox"]::before {
+    content: '*';
+    font-family: 'Triforce', sans-serif;
+    color: rgba(255, 215, 100, 0.85); 
+    position: absolute;
+    font-size: 1.2em;
+    top: 0em; 
+    left: 0em; 
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    line-height: 1em;
+}
+
+#filter-panel input[type="checkbox"]:checked::before {
+    opacity: 1;
+}
+
+#filter-panel input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(137, 225, 231, 0.8);
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 2px;
+    margin-right: 0.6em;
+    transform: scale(1.3);
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 4px rgba(137, 225, 231, 0.3);
+}
+
+#filter-panel input[type="checkbox"]:checked {
+    background-color: rgba(137, 225, 231, 0.15);
+    box-shadow: 0 0 6px rgba(137, 225, 231, 0.6);
+}
+
+#filter-panel input[type="checkbox"]:checked::after {
+    opacity: 1;
+}

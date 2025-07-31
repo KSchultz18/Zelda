@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Zelda Shrines Map</title>
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/filter_panel.css" />
+    <script type="module" src="scripts/main.js" defer></script>
+</head>
+<body>
+    <noscript><strong>Please enable JavaScript to view this page correctly.</strong></noscript>
+
+    <div id="map">
+        <div id="filter-container">
+            <button id="filter-toggle">Filters <span class="rupies">$</span></button>
+            <div id="filter-panel"></div>
+        </div>
+        <div id="tile-container" style="position: absolute;"></div>
+        <svg id="svgmap" width="24000" height="20000" xmlns="http://www.w3.org/2000/svg"></svg>
+        
+        <div class="title-box">
+            <div class="triforce-box">*</div>
+            <div class="header-text">
+                <h1>Breath of the Wild</h1>
+                <h2>Interactive Shrine Map</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
