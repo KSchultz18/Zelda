@@ -21,7 +21,8 @@ export function render_markers(grouped_markers, svg) {
 
     enter.merge(selection)
         // removed leading slash from path for pages
-        .attr("href", d => `sources/images/markers/${d.icon}`);
+        .attr("href", d => `sources/images/markers/${d.icon}`)
+        .attr("xlink:href", d => `sources/images/markers/${d.icon}`);
 
     set_zoom(current_zoom); 
 }
