@@ -34,7 +34,8 @@ export function render_visible_tiles(container, transform) {
             loaded_tiles.add(key);
             container.append("img")
                 .attr("class", "tile")
-                .attr("src", `/sources/images/map_tiles/MapTex_${map_col[col]}-${row}.png`)
+                //removed leading slash for github pages
+                .attr("src", `sources/images/map_tiles/MapTex_${map_col[col]}-${row}.png`)
                 .style("position", "absolute")
                 .style("width", `${tile_size}px`)
                 .style("height", `${tile_size}px`)
