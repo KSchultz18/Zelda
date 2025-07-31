@@ -20,7 +20,8 @@ export function render_markers(grouped_markers, svg) {
         .on("click", d => d.link && window.open(d.link, "_blank"));
 
     enter.merge(selection)
-        .attr("href", d => `/sources/images/markers/${d.icon}`);
+        // removed leading slash from path for pages
+        .attr("href", d => `sources/images/markers/${d.icon}`);
 
     set_zoom(current_zoom); 
 }
