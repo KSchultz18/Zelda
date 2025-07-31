@@ -20,7 +20,7 @@ export function render_markers(grouped_markers, svg) {
         .on("click", d => d.link && window.open(d.link, "_blank"));
 
     enter.merge(selection)
-        // removed leading slash from path for pages
+        // removed leading slash from path and add "xlink:href" to display on github pages
         .attr("href", d => `sources/images/markers/${d.icon}`)
         .attr("xlink:href", d => `sources/images/markers/${d.icon}`);
 
